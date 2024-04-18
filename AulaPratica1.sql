@@ -56,4 +56,6 @@ WHERE OBJECT_TYPE='VIEW';
 SELECT OBJECT_NAME
 FROM ALL_OBJECTS
 WHERE OBJECT_TYPE='VIEW'
-    AND OBJECT_NAME LIKE '%TABLE%';
+    AND (OBJECT_NAME LIKE '_____TAB%COL%' -- Conotacao: 5Underline considera que eh aquela quantiade(5) de carcteres mas sem especicar qual, depois TAB, 
+                                            -- %Qualquer quantidade de caracteres, COL, %Qualquer quantiade dnv
+    OR OBJECT_NAME LIKE 'U%TAB%COL%');
