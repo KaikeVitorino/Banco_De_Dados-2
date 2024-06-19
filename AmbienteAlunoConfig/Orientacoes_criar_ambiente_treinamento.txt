@@ -1,0 +1,37 @@
+Orientações para preparar o ambiente de treinamento:
+
+Será criado o ambiente de treinamento com dois usuários: DEMO senha DEMO e ALUNO senha ALUNO;
+
+O usuário DEMO será o dono dOs objetos de banco de dados utilizados nos exercícios.
+
+O usuário ALUNO será equivalente ao usuário que o aluno utiliza nas aulas de laboratório. 
+Então será com o usuário aluno a realização dos exercícios.
+
+Sequência de execução dos scripts:
+
+1) Conectado como o usuário SYSTEM
+   Execute no interpretador de comando @caminho_onde_estão_os_arquivos_script/demo.sql
+   Este script irá criar o usuário DEMO e acionar a execução do arquivo BDEMOBLD_S.SQL,
+   que criará todos os objetos e inclusões de dados para os objetos do usuário DEMO.
+
+2) Depois de rodar o DEMO.SQL, conecte-se com o usuário SYSTEM novamente e execute o arquivo ALUNO.SQL
+   @caminho_onde_estão_os_arquivos_script/aluno.sql
+
+   Este arquivo irá criar a ROLE TAB_DEMO com privilégios públicos para os objetos do usuário DEMO, 
+criará também sinônimos para os mesmos objetos.
+
+Após a criação do ambiente de treinamento, o usuário ALUNO terá acesso aos seguintes objetos tabelas:
+- EMP (S_EMP)
+- DEPT (S_DEPT)
+- PRODUTO (S_PRODUCT)
+- S_CUSTOMER
+- S_EMP
+- S_DEPT
+- S_PRODUCT
+- S_INVENTORY
+- S_ITEM
+- S_ORD
+- S_REGION
+- S_TITLE
+- S_WAREHOUSE
+- E todas as tabelas do projeto pedido.
